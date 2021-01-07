@@ -21,9 +21,9 @@ strata=S1*lambda1/d1+S2*lambda2/d2
 pom=cv*V*ro
 
 tp=0.01
-kp=0.15
+kp=0.1
 Ti=2.5
-Td=1.25
+Td=0.0
 N=100000
 T=Tzew
 e = [Tzad-Tzew]
