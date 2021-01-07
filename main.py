@@ -51,3 +51,4 @@ while n<=N:
 pylab.plot(x,y)
 
 pylab.show()
+#test githuba
