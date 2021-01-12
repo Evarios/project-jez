@@ -22,8 +22,8 @@ pom=cv*V*ro
 
 tp=0.01
 kp=0.1
-Ti=2.5
-Td=0.0
+Ti=0.25
+Td=0.05
 N=100000
 T=Tzew
 e = [Tzad-Tzew]
@@ -38,13 +38,13 @@ while n<=N:
   Qd=kp*u
   #print(e[n],u, "\n")
 
-  T=(eta*(u*u)*tp/R-pom*Tzad+tp*Tzew*strata)/(tp*strata-pom)+T
+  T=(eta*(u*u)*tp/R-tp*(T-Tzew)*strata)/(tp*strata)+T
   #print(n,T)
   #if T>300: #T>tmax
    # T=300
     #e[-1]=Tzad-T
 
-  x.append(n)
+  x.append(n*tp)
   y.append(T)
   n+=1
 
