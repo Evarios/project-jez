@@ -38,7 +38,7 @@ while n<=N:
   Qd=kp*u
   #print(e[n],u, "\n")
 
-  T=(eta*(u*u)*tp/R-tp*(T-Tzew)*strata)/(tp*strata)+T
+  T=(eta*(Qd**2)*tp/R-tp*(T-Tzew)*strata)/(tp*strata)+T
   #print(n,T)
   #if T>300: #T>tmax
    # T=300
