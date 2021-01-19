@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> PA </title>
+	<link rel="shortcut icon" href="https://imgur.com/aHkSQKb.png">
+	<link rel="stylesheet" href="terrarium.css" type="text/css">
+	
+</head>
+<body>
+	
+	<header> 
+		<img src="https://i.imgur.com/nlmqB7et.png?1" style="margin: 10px;"/> 
+		Projekt Terrarium
+	</header>
+	
+	<div id="content">
+		<div class="container" >
+		<form>
+			<h3> Właściwości terrarium </h3>
+			<label for="a"> głębokość terrarium [cm]</label> 
+			<input type="number" id="a" step="0.1" value="40"><br>
+			<label for="b"> szerokość terrarium [cm] </label> 
+			<input type="number" id="b" step="0.1" value="60"><br>
+			<label for="h"> wysokość terrarium [cm] </label> 
+			<input type="number" id="h" step="0.1" value="40"><br>
+			<label for="d1"> grubość ścianek [mm]</label> 
+			<input type="number" id="d1" value="10"><br>
+			<label for="d2"> grubość frontu [mm]</label> 
+			<input type="number" id="d2" value="5"><br>
+			<label for="boki">materiał ścianek</label>
+			<select id="boki">
+				<option value="szklo"> szkło </option>
+				<option value="drewno"> drewno </option>
+				<option value="plyta"> płyta wiórowa </option>
+				<option value="sklejka" selected="selected"> sklejka </option>
+			</select><br>
+			<label for="front">materiał frontu</label>
+			<select id="front">
+				<option value="szklo" selected="selected"> szkło </option>
+				<option value="drewno"> drewno </option>
+				<option value="plyta"> płyta wiórowa </option>
+				<option value="sklejka"> sklejka </option>
+			</select><br>
+			<h3> Temperatura </h3>
+			<label for="Tzew">temperatura otoczenia </label> 
+			<input type="number" id="Tzew" step="0.1" value="15"><br>
+			<label for="Tzd">temperatura zadana dzień </label> 
+			<input type="number" id="Tzd" step="0.1" value="23"><br>
+			<label for="Tzn">temperatura zadana noc </label> 
+			<input type="number" id="Tzn" step="0.1" value="23"><br>
+		</form>
+		</div>
+		
+		<div class="container">
+			tu będzie wykres
+		</div>
+	</div>
+	
+	<!-- <footer> Wykonanie: Qż &amp co. </footer> -->
+</body>
