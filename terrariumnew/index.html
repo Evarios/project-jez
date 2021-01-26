@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>terrarium</title>
+    <meta property="og:image" content="/assets/img/Kopia%20Bez%20tytułu.png">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+</head>
+
+<body style="background: #ffdec6;">
+    <header class="text-center">
+        <div class="row d-flex justify-content-center justify-content-xl-center" style="font-size: 85px;"><img class="img-fluid d-lg-flex align-self-center justify-content-lg-center align-items-lg-center" src="/assets/img/Kopia%20Bez%20tytułu.png" width="9%">
+            <p class="text-nowrap d-xl-flex flex-shrink-1 align-items-xl-center" style="background: ffdec6;margin: 0;">Projekt terrarium</p>
+        </div>
+    </header><!-- Start: 1 Row 2 Columns -->
+    <div style="margin: 8px;">
+        <div class="container">
+            <div class="row">
+                <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="border-radius: 40px;background: #fac096;padding: 15px 15px;margin: 15px;padding-bottom: 0;">
+                    <div style="border-radius: 0px;">
+                        <!-- Start: wymiary -->
+                        <div class="form-group">
+                            <div class="col">
+                                <div class="row d-flex">
+                                    <div class="col"><label class="col-form-label">głębokość terrarium [cm]</label></div><input type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="40" min="20">
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">szerokość terrarium [cm]</label></div><input type="number" placeholder="60" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="60" min="20">
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">wysokość terrarium [cm]</label></div><input type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="20" value="40">
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">grubość ścianek [mm]</label></div><input type="number" placeholder="10" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="10" min="0,1">
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">grubość frontu [mm]</label></div><input type="number" placeholder="5" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="0,1" value="5">
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">materiał ścianek</label></div><select style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
+                                        <option value="0,16" selected="">sklejka</option>
+                                        <option value="0,8">szkło</option>
+                                        <option value="0,4">drewno dębowe</option>
+                                        <option value="0,4">drewno bukowe</option>
+                                        <option value="0,3">drewno świerkowe</option>
+                                        <option value="0,3">drewno sosnowe</option>
+                                        <option value="0,13">płyta wiórowa</option>
+                                        <option value="0,19">pleksiglas</option>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">materiał frontu</label></div><select style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
+                                        <option value="0,16">sklejka</option>
+                                        <option value="0,8" selected="">szkło</option>
+                                        <option value="0,4">drewno dębowe</option>
+                                        <option value="0,4">drewno bukowe</option>
+                                        <option value="0,3">drewno świerkowe</option>
+                                        <option value="0,3">drewno sosnowe</option>
+                                        <option value="0,13">płyta wiórowa</option>
+                                        <option value="0,19">pleksiglas</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><!-- End: wymiary -->
+                        <!-- Start: temperatura -->
+                        <div class="form-group">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">temperatura otoczenia</label></div><input class="d-flex" type="number" placeholder="15" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="15">
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">temperatura zadana dzień</label></div><input class="d-flex" type="number" placeholder="24" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="24">
+                                </div>
+                                <div class="row">
+                                    <div class="col"><label class="col-form-label">temperatoura zadana noc</label></div><input type="number" placeholder="22" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="22">
+                                </div>
+                            </div>
+                        </div><!-- End: temperatura -->
+                    </div>
+                </div>
+                <div class="col-md-6 d-xl-flex justify-content-xl-center align-items-xl-center" style="border-color: var(--gray);border-radius: 4px;margin: 15px;padding: 0px;width: 510px;max-width: 510px;">
+                    <div class="d-lg-flex d-xl-flex align-items-lg-center justify-content-xl-center align-items-xl-center" style="background: #fac096;border-radius: 40px;padding: 15px;height: 428px;">
+                        <div class="d-xl-flex justify-content-xl-center align-items-xl-center"><canvas data-bs-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot;4500&quot;,&quot;5300&quot;,&quot;6250&quot;,&quot;7800&quot;,&quot;9800&quot;,&quot;15000&quot;],&quot;fill&quot;:true}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;ticks&quot;:{&quot;beginAtZero&quot;:false}}],&quot;yAxes&quot;:[{&quot;ticks&quot;:{&quot;beginAtZero&quot;:false}}]}}}"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: 1 Row 2 Columns -->
+    <div class="footerfix"></div>
+    <footer class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-end"><em>By @Qż &amp; co.</em></footer>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/chart.min.js"></script>
+    <script src="/assets/js/script.min.js"></script>
+</body>
+
+</html>
