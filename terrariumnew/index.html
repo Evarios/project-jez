@@ -22,64 +22,65 @@
                 <div class="col d-lg-flex justify-content-lg-center align-items-lg-center" style="border-radius: 40px;background: #fac096;padding: 15px 15px;margin: 15px;padding-bottom: 0;">
                     <div style="border-radius: 0px;">
                         <!-- Start: wymiary -->
-                        <div class="form-group">
-                            <div class="col">
-                                <div class="row d-flex">
-                                    <div class="col"><label class="col-form-label">głębokość terrarium [cm]</label></div><input type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="40" min="20">
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">szerokość terrarium [cm]</label></div><input type="number" placeholder="60" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="60" min="20">
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">wysokość terrarium [cm]</label></div><input type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="20" value="40">
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">grubość ścianek [mm]</label></div><input type="number" placeholder="10" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="10" min="0,1">
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">grubość frontu [mm]</label></div><input type="number" placeholder="5" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="0,1" value="5">
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">materiał ścianek</label></div><select style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
-                                        <option value="0,16" selected="">sklejka</option>
-                                        <option value="0,8">szkło</option>
-                                        <option value="0,4">drewno dębowe</option>
-                                        <option value="0,4">drewno bukowe</option>
-                                        <option value="0,3">drewno świerkowe</option>
-                                        <option value="0,3">drewno sosnowe</option>
-                                        <option value="0,13">płyta wiórowa</option>
-                                        <option value="0,19">pleksiglas</option>
-                                    </select>
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">materiał frontu</label></div><select style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
-                                        <option value="0,16">sklejka</option>
-                                        <option value="0,8" selected="">szkło</option>
-                                        <option value="0,4">drewno dębowe</option>
-                                        <option value="0,4">drewno bukowe</option>
-                                        <option value="0,3">drewno świerkowe</option>
-                                        <option value="0,3">drewno sosnowe</option>
-                                        <option value="0,13">płyta wiórowa</option>
-                                        <option value="0,19">pleksiglas</option>
-                                    </select>
+                        <form action="" method="POST">
+                            <div class="form-group">
+                                <div class="col">
+                                    <div class="row d-flex">
+                                        <div class="col"><label class="col-form-label">głębokość terrarium [cm]</label></div><input id="glebokosc" type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="40" min="20">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">szerokość terrarium [cm]</label></div><input id="szerokosc" type="number" placeholder="60" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="60" min="20">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">wysokość terrarium [cm]</label></div><input id="wysokosc" type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="20" value="40">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">grubość ścianek [mm]</label></div><input id="grubosc_scianek" type="number" placeholder="10" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="10" min="0,1">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">grubość frontu [mm]</label></div><input id="grubosc_frontu" type="number" placeholder="5" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="0,1" value="5">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">materiał ścianek</label></div><select id="material_scianek" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
+                                            <option value="0,16" selected="">sklejka</option>
+                                            <option value="0,8">szkło</option>
+                                            <option value="0,4">drewno dębowe</option>
+                                            <option value="0,4">drewno bukowe</option>
+                                            <option value="0,3">drewno świerkowe</option>
+                                            <option value="0,3">drewno sosnowe</option>
+                                            <option value="0,13">płyta wiórowa</option>
+                                            <option value="0,19">pleksiglas</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">materiał frontu</label></div><select id="material_frontu" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
+                                            <option value="0,16">sklejka</option>
+                                            <option value="0,8" selected="">szkło</option>
+                                            <option value="0,4">drewno dębowe</option>
+                                            <option value="0,4">drewno bukowe</option>
+                                            <option value="0,3">drewno świerkowe</option>
+                                            <option value="0,3">drewno sosnowe</option>
+                                            <option value="0,13">płyta wiórowa</option>
+                                            <option value="0,19">pleksiglas</option>
+                                        </select>
+                                    </div>                     
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">temperatura otoczenia</label></div><input id="temperatura_otoczenia" class="d-flex" type="number" placeholder="15" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="15">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">temperatura zadana dzień</label></div><input id="temperatura_dzien" class="d-flex" type="number" placeholder="24" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="24">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"><label class="col-form-label">temperatura zadana noc</label></div><input id="temperatura_noc" type="number" placeholder="22" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="22">
+                                    </div>
+                                    <div class="row">
+                                        <input type="submit" name="oblicz" value="Oblicz" />
+                                    </div>       
                                 </div>
                             </div>
-                        </div><!-- End: wymiary -->
-                        <!-- Start: temperatura -->
-                        <div class="form-group">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">temperatura otoczenia</label></div><input class="d-flex" type="number" placeholder="15" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="15">
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">temperatura zadana dzień</label></div><input class="d-flex" type="number" placeholder="24" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="24">
-                                </div>
-                                <div class="row">
-                                    <div class="col"><label class="col-form-label">temperatoura zadana noc</label></div><input type="number" placeholder="22" step="0,1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="22">
-                                </div>
-                            </div>
-                        </div><!-- End: temperatura -->
-                    </div>
+                        </div>
+                    </form>
+                </div>
                 </div>
                 <div class="col-md-6 d-xl-flex justify-content-xl-center align-items-xl-center" style="border-color: var(--gray);border-radius: 4px;margin: 15px;padding: 0px;width: 510px;max-width: 510px;">
                     <div class="d-lg-flex d-xl-flex align-items-lg-center justify-content-xl-center align-items-xl-center" style="background: #fac096;border-radius: 40px;padding: 15px;height: 428px;">
