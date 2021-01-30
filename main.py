@@ -11,18 +11,18 @@ def home():
         eta=0.95   #sprawnosc
         R=1     #opor lampy
         #cv=1005 #powietrza
-        a=request.form["a"]
-        b=request.form["b"]
-        h=request.form["h"]
+        a=float(request.form["glebokosc"])
+        b=float(request.form["szerokosc"])
+        h=float(request.form["wysokosc"])
         #V=a*b*h
         #ro=1.21 #gestosc
-        Tzad=request.form["Tzd"] #zadana
-        Tzew=request.form["Tzew"] #otoczenia/początkowa
+        Tzad=float(request.form["temperatura_dzien"]) #zadana
+        Tzew=float(request.form["temperatura_otoczenia"]) #otoczenia/początkowa
         #1 - boki, 2- front
-        lambda1=request.form["lbd1"]  #przenikalność cieplna materiału 
-        lambda2=request.form["lbd2"]
-        d1=request.form["d1"] #grubość ścianki
-        d2=request.form["d2"]
+        lambda1=float(request.form["material_scianek"])  #przenikalność cieplna materiału 
+        lambda2=float(request.form["material_frontu"])
+        d1=float(request.form["grubosc_scianek"]) #grubość ścianki
+        d2=float(request.form["grubosc_frontu"])
         S1=a*h+2*b*h+a*b
         S2=a*h
         strata=S1*lambda1/d1+S2*lambda2/d2
@@ -31,7 +31,7 @@ def home():
         kp=0.1
         Ti=0.25
         Td=0.05
-        N=100000
+        N=1000
         T=Tzew
         e=[Tzad-Tzew]
         Qdmax = 64
@@ -59,7 +59,7 @@ def home():
             n+=1
         p=figure()
         p.line(x,y)
-        script,div=components(p)
+        script,div=components(p,CDN)
         cdn_js=CDN.js_files
         cdn_css=CDN.css_files
         return render_template("tmp.html", script1=script, div1=div, cdn_css=cdn_css, cdn_js=cdn_js)
