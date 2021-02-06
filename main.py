@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.resources import CDN
@@ -31,7 +31,7 @@ def home():
         kp=0.1
         Ti=0.25
         Td=0.05
-        N=1000
+        N=100000
         T=Tzew
         e=[Tzad-Tzew]
         Qdmax = 64
@@ -57,12 +57,12 @@ def home():
             x.append(n*tp)
             y.append(T)
             n+=1
-        p=figure()
+        p=figure(plot_width=475,plot_height=400,tools='')
         p.line(x,y)
         script,div=components(p,CDN)
         cdn_js=CDN.js_files
         cdn_css=CDN.css_files
-        return render_template("tmp.html", script1=script, div1=div, cdn_css=cdn_css, cdn_js=cdn_js)
+        return render_template("bokeh.html", script1=script, div1=div, cdn_css=cdn_css, cdn_js=cdn_js[0])
     else:
         return render_template("index.html")
 
