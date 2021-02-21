@@ -35,6 +35,8 @@ def home():
         N=86400
         if(Tzew > Tzad):
             Tzad = Tzew
+        if(Tzew > Tnoc):
+            Tnoc = Tzew
         T=Tzew
         e=[Tzad-Tzew]
         temp = Tzad-T
