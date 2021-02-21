@@ -70,7 +70,7 @@ def home():
             x.append(n*tp)
             y.append(T)
             n+=1
-        p=figure(plot_width=475,plot_height=400,tools='')
+        p=figure(plot_width=475,plot_height=400,tools='',x_axis_label="Czas [s]",y_axis_label="Temperatura [st. C]")
         p.line(x,y)
         script,div=components(p,CDN)
         cdn_js=CDN.js_files
