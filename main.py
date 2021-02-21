@@ -40,7 +40,7 @@ def home():
         temp = Tzad-T
         Qdmax = 24
         umax = 20
-        a=Qdmax/umax
+        a=(Qdmax/umax)/100
         x=[0]
         y=[Tzew]
         n=1
@@ -53,7 +53,7 @@ def home():
             u=kp*(e[-2]+(tp/Ti)*sum(e)+(Td/tp)*(e[-1]-e[-2]))
             #if (u > umax):
             #    u = umax
-            Qd=kp*u
+            Qd=a*u
             if (Qd > 230):
                 Qd = 230
             #print(e[n],u, "\n")
