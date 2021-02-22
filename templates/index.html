@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>terrarium</title>
     <meta property="og:image" content="/assets/img/Kopia%20Bez%20tytułu.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     {% block bokeh %}
     {% endblock %}
@@ -15,9 +17,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <header class="text-center">
-        <div class="row" style="font-size: 85px;"><img class="img-fluid" src="/assets/img/Kopia%20Bez%20tytułu.png" width="9%">
-            <p class="text-nowrap" style="background: ffdec6;margin: 0;">Projekt terrarium</p>
+        <div class="row" style="font-size: 85px;">
+        <div class ="col-md-2">
         </div>
+        <div class ="col-md-8">
+            <img width="100%" src="{{url_for('static', filename='quiche.png')}}" align="middle" />
+        </div>
+        <div class ="col-md-2">
+        </div>
+            </div>
     </header>
     <div style="margin: 8px;">
         <div class="container-fluid">
@@ -85,20 +93,19 @@
                     </form>
                 </div>
                 
-                <div class="col-md-5" style="border-color: var(--gray);border-radius: 4px;margin: 15px;padding: 0px;">
+                <div class="col-lg-6" style="border-color: var(--gray);border-radius: 4px;margin: 15px;padding: 0px;">
                     <div style="background: #fac096;border-radius: 40px;padding: 15px;">
                         {% block plot %}
                         <div class="d-xl-flex justify-content-xl-center align-items-xl-center"><canvas data-bs-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Revenue&quot;,&quot;backgroundColor&quot;:&quot;#4e73df&quot;,&quot;borderColor&quot;:&quot;#4e73df&quot;,&quot;data&quot;:[&quot;4500&quot;,&quot;5300&quot;,&quot;6250&quot;,&quot;7800&quot;,&quot;9800&quot;,&quot;15000&quot;],&quot;fill&quot;:true}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:true,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;ticks&quot;:{&quot;beginAtZero&quot;:false}}],&quot;yAxes&quot;:[{&quot;ticks&quot;:{&quot;beginAtZero&quot;:false}}]}}}"></canvas></div>
                     </div>{% endblock %}
                 </div>
             </div>
+            <div class 
         </div>
         </div>
     </div>
     <div class="footerfix"></div>
-    <footer class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-end"><em>By @Qż &amp; co.</em></footer>
-    <script src="/assets/js/chart.min.js"></script>
-    <script src="/assets/js/script.min.js"></script>
+    <footer class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-end"><em>By Martyna Kurz, Dominik Pawłowski, Mateusz Miłkowski, Jan Bróździak</em></footer>
 </body>
 
 </html>
