@@ -70,6 +70,7 @@ def home():
             y.append(T)
             n+=1
         p=figure(plot_width=723,plot_height=400,tools='',x_axis_label="Czas [s]",y_axis_label="Temperatura [st. C]")
+        p.border_fill_color='#fac096'
         p.line(x,y)
         script,div=components(p,CDN)
         cdn_js=CDN.js_files
