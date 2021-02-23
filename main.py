@@ -32,7 +32,7 @@ def home():
         kp=0.01
         Ti=0.25
         Td=0.05
-        N=86400
+        N=172200
         if(Tzew > Tzad):
             Tzad = Tzew
         if(Tzew > Tnoc):
@@ -47,7 +47,7 @@ def home():
         y=[Tzew]
         n=1
         while n<=N:
-            if(n>43200):
+            if(n%86400>43200):
                 temp = Tnoc - T
             else:
                 temp = Tzad - T
