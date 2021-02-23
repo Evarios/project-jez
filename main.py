@@ -29,7 +29,7 @@ def home():
         strata=S1*lambda1/d1+S2*lambda2/d2
         pom=cv*V*ro
         tp=1
-        kp=0.01
+        kp=0.008
         Ti=0.25
         Td=0.05
         N=172200
@@ -46,26 +46,25 @@ def home():
         x=[0]
         y=[Tzew]
         n=1
+        esum = e[0]
         while n<=N:
-            if(n%86400>43200):
+            if (n%86400>43200):
                 temp = Tnoc - T
             else:
                 temp = Tzad - T
             e.append(temp)
-            u=kp*(e[-2]+(tp/Ti)*sum(e)+(Td/tp)*(e[-1]-e[-2]))
+            esum += e[n]
+            u=kp*(e[-2]+(tp/Ti)*esum+(Td/tp)*(e[-1]-e[-2]))
             #if (u > umax):
             #    u = umax
             Qd=a*u
             if (Qd > 230):
                 Qd = 230
             #print(e[n],u, "\n")
-            if (Qd < 0):
-                T=(eta*(Qd**2)*tp/R-tp*(T-Tzew)*strata)/(pom)+ T
-            else:
-                T=(eta*(Qd**2)*tp/R-tp*(T-Tzew)*strata)/(pom)+ T
+            T=(eta*(Qd**2)*tp/R-tp*(T-Tzew)*strata)/(pom)+ T
             #print(n,T)
-            if T>45: #T>tmax
-                T=45
+            if (T>30): #T>tmax
+                T=30
                 #e[-1]=Tzad-T
             x.append(n*tp)
             y.append(T)
