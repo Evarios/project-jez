@@ -70,12 +70,12 @@ def home():
             x.append(n*tp)
             y.append(T)
             n+=1
-        p=figure(plot_width=475,plot_height=400,tools='',x_axis_label="Czas [s]",y_axis_label="Temperatura [st. C]")
+        p=figure(plot_width=723,plot_height=400,tools='',x_axis_label="Czas [s]",y_axis_label="Temperatura [st. C]")
         p.line(x,y)
         script,div=components(p,CDN)
         cdn_js=CDN.js_files
         cdn_css=CDN.css_files
-        return render_template("bokeh.html", script1=script, div1=div, cdn_css=cdn_css, cdn_js=cdn_js[0])
+        return render_template("bokeh.html",script1=script, div1=div, cdn_css=cdn_css, cdn_js=cdn_js[0])
     else:
         return render_template("index.html")
 
