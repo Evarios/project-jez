@@ -66,6 +66,8 @@ def home():
             if (T>30): #T>tmax
                 T=30
                 #e[-1]=Tzad-T
+            if (Tzew>30):
+                T=Tzew
             x.append(n*tp)
             y.append(T)
             n+=1
