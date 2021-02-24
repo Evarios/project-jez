@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from bokeh.plotting import figure
 from bokeh.embed import components
 from bokeh.resources import CDN
+import random
 
 app = Flask(__name__)
 
@@ -33,21 +34,25 @@ def home():
         Ti=0.25
         Td=0.05
         N=172200
-        if(Tzew > Tzad):
+        if(Tzew >= Tzad):
             Tzad = Tzew
-        if(Tzew > Tnoc):
+        if(Tzew >= Tnoc):
             Tnoc = Tzew
-        T=Tzew
-        e=[Tzad-Tzew]
+        T = Tzew
+        e = [Tzad-Tzew]
         temp = Tzad-T
         Qdmax = 24
         umax = 20
-        a=(Qdmax/umax)/100
-        x=[0]
-        y=[Tzew]
-        n=1
+        a = (Qdmax/umax)/100
+        x = [0]
+        y = [Tzew]
+        k = [1/3600,43200/3600,43201/3600,86399/3600,86400/3600,129600/3600,129601/3600,172200/3600]
+        l = [Tzad]
+        n = 1
         esum = e[0]
-        while n<=N:
+        while (n<=N):
+            if (n%36 == 0):
+                Tzew += round(random.uniform(-0.02,0.02),4)
             if (n%86400>43200):
                 temp = Tnoc - T
             else:
@@ -68,12 +73,18 @@ def home():
                 #e[-1]=Tzad-T
             if (Tzew>30):
                 T=Tzew
-            x.append(n*tp)
+            x.append((n*tp)/3600)
             y.append(T)
+            if(n==43200 or n==86400 or n == 129600):
+                l.append(Tzad)
+            elif(n == 43201 or n == 86399 or n == 129601 or n == 172200):
+                l.append(Tnoc)
             n+=1
-        p=figure(plot_width=723,plot_height=400,tools='',x_axis_label="Czas [s]",y_axis_label="Temperatura [st. C]")
+        p=figure(plot_width=723,plot_height=400,tools="pan,wheel_zoom,reset",x_axis_label="Czas [h]",y_axis_label="Temperatura [st. C]", toolbar_location="right")
         p.border_fill_color='#fac096'
-        p.line(x,y)
+        p.line(x,y, legend_label = "Obecna temperatura")
+        p.line(k, l, line_color='#FF0000', legend_label = "Temperatura zadana")
+        p.legend.location = "bottom_right"
         script,div=components(p,CDN)
         cdn_js=CDN.js_files
         cdn_css=CDN.css_files
