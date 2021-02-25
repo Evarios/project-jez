@@ -1,5 +1,56 @@
 {% extends "index.html" %}
 
+{% block data %}
+<div class="row d-flex">
+    <div class="col"><label class="col-form-label">głębokość terrarium [cm]</label></div><input id="glebokosc" name="glebokosc" type="number" placeholder={{glebokosc}} style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value={{glebokosc}} min="20">
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">szerokość terrarium [cm]</label></div><input id="szerokosc" name="szerokosc" type="number" placeholder={{szerokosc}} style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value={{szerokosc}} min="20">
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">wysokość terrarium [cm]</label></div><input id="wysokosc" name="wysokosc" type="number" placeholder={{wysokosc}} style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="20" value={{wysokosc}}>
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">grubość ścianek [cm]</label></div><input id="grubosc_scianek" name="grubosc_scianek" type="number" placeholder={{grubosc_scianek}} step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value={{grubosc_scianek}} min="0.1">
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">grubość frontu [cm]</label></div><input id="grubosc_frontu" name="grubosc_frontu" type="number" placeholder={{grubosc_frontu}} step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="0.1" value={{grubosc_frontu}}>
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">materiał ścianek</label></div><select id="material_scianek" name="material_scianek" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
+        <option value="0.16" selected="">sklejka</option>
+        <option value="0.8">szkło</option>
+        <option value="0.4">drewno dębowe</option>
+        <option value="0.4">drewno bukowe</option>
+        <option value="0.3">drewno świerkowe</option>
+        <option value="0.3">drewno sosnowe</option>
+        <option value="0.13">płyta wiórowa</option>
+        <option value="0.19">pleksiglas</option>
+    </select>
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">materiał frontu</label></div><select id="material_frontu" name="material_frontu" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
+        <option value="0.16">sklejka</option>
+        <option value="0.8" selected="">szkło</option>
+        <option value="0.4">drewno dębowe</option>
+        <option value="0.4">drewno bukowe</option>
+        <option value="0.3">drewno świerkowe</option>
+        <option value="0.3">drewno sosnowe</option>
+        <option value="0.13">płyta wiórowa</option>
+        <option value="0.19">pleksiglas</option>
+    </select>
+</div>                     
+<div class="row">
+    <div class="col"><label class="col-form-label">temperatura otoczenia</label></div><input id="temperatura_otoczenia" name="temperatura_otoczenia" class="d-flex" type="number" placeholder={{temperatura_otoczenia}} step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value={{temperatura_otoczenia}} max="35">
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">temperatura zadana dzień</label></div><input id="temperatura_dzien" name="temperatura_dzien" class="d-flex" type="number" placeholder={{temperatura_dzien}} step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value={{temperatura_dzien}}>
+</div>
+<div class="row">
+    <div class="col"><label class="col-form-label">temperatura zadana noc</label></div><input id="temperatura_noc" name="temperatura_noc" type="number" placeholder={{temperatura_noc}} step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value={{temperatura_noc}}>
+</div>
+{% endblock %}
+
 {% block plot %}
 <link rel="stylesheet" href={{cdn_css | safe}} type="text/css" />
 <script type="text/javascript" src={{cdn_js | safe}}></script>

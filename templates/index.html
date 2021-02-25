@@ -34,6 +34,7 @@
                         <form action="" method="POST">
                             <div class="form-group">
                                 <div class="col">
+                                    {% block data %}
                                     <div class="row d-flex">
                                         <div class="col"><label class="col-form-label">głębokość terrarium [cm]</label></div><input id="glebokosc" name="glebokosc" type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="40" min="20">
                                     </div>
@@ -44,10 +45,10 @@
                                         <div class="col"><label class="col-form-label">wysokość terrarium [cm]</label></div><input id="wysokosc" name="wysokosc" type="number" placeholder="40" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="20" value="40">
                                     </div>
                                     <div class="row">
-                                        <div class="col"><label class="col-form-label">grubość ścianek [mm]</label></div><input id="grubosc_scianek" name="grubosc_scianek" type="number" placeholder="10" step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="10" min="0.1">
+                                        <div class="col"><label class="col-form-label">grubość ścianek [cm]</label></div><input id="grubosc_scianek" name="grubosc_scianek" type="number" placeholder="1" step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="1" min="0.1">
                                     </div>
                                     <div class="row">
-                                        <div class="col"><label class="col-form-label">grubość frontu [mm]</label></div><input id="grubosc_frontu" name="grubosc_frontu" type="number" placeholder="5" step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="0.1" value="5">
+                                        <div class="col"><label class="col-form-label">grubość frontu [cm]</label></div><input id="grubosc_frontu" name="grubosc_frontu" type="number" placeholder="0.5" step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" min="0.1" value="0.5">
                                     </div>
                                     <div class="row">
                                         <div class="col"><label class="col-form-label">materiał ścianek</label></div><select id="material_scianek" name="material_scianek" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;">
@@ -82,6 +83,7 @@
                                     <div class="row">
                                         <div class="col"><label class="col-form-label">temperatura zadana noc</label></div><input id="temperatura_noc" name="temperatura_noc" type="number" placeholder="22" step="0.1" style="border-radius: 10px;border-style: solid;border-color: #ffab6d;" value="22">
                                     </div>
+                                    {% endblock %}
                                     <div class="row">
                                         <input type="submit" name="oblicz" value="Oblicz" />
                                     </div>       
